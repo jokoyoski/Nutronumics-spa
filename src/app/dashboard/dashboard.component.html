@@ -1,0 +1,87 @@
+<div class="w-screen h-screen bg-gray-100">
+  <div class="flex">
+    <div class="w-1/5 bg-white h-screen p-5">
+      <div>
+       
+        <div>
+          <div class="flex space-x-3 items-center">
+            <div class="bg-[#6C63FF] p-5 rounded-lg"></div>
+            <span class="text-2xl font-semibold uppercase">Nigromotics</span>
+          </div>
+          <h2>{{ 'HOME.TITLE' | translate }}  {{name}} </h2>
+        </div>
+       
+      
+      </div>
+    </div>
+    <div class="w-4/5 flex gap-4 px-5">
+      <div class="w-3/5 h-screen py-10">
+        <div class="flex flex-col space-y-4 h-full">
+          <div class="grid grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder="Search..."
+              class="px-3 py-2 focus:outline-none"
+            />
+           
+          </div>
+          <div class="bg-white rounded-lg flex h-2/6 p-5">
+         
+           
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="flex flex-col space-y-3">
+              <div class="bg-white rounded-lg flex space-x-3 p-5">
+                <div class="w-4/5 flex flex-col">
+                  <div class="flex space-x-3">
+                    <div>
+                      <img
+                        src="https://tse4.mm.bing.net/th?id=OIP.omq-RNCNuILngjP6P1W2iQHaFj&pid=Api&P=0&w=260&h=195"
+                        class="h-10 w-10 rounded-full"
+                        alt=""
+                      />
+                    </div>
+                   
+                  </div>
+                 
+                </div>
+                
+              </div>
+              <div class="bg-white rounded-lg p-5">
+               
+               
+              </div>
+            </div>
+            <div
+              class="bg-white overflow-scroll Schedule-Box rounded-lg h-5/5 flex flex-col p-5"
+            >
+            
+           
+              <hr class="text-gray-400 h-5 w-full" />
+              <div class="grid grid-cols-3 mb-3">
+                <div class="flex flex-col p-2 border-r-2 border-gray-400">
+                 
+                </div>
+                <div class="col-span-2 flex flex-col px-3">
+                
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; align-items:flex-end;" class="w-2/5 flex-col space-y-5 h-screen py-10">
+        <a
+        (click)="loggedOut()"
+         style="display: inline-block; padding-right: 3px;"
+          routerLink="/sign-in"
+          class="rounded-full border-[#6C63FF] border-2 px-3 py-1 text-[#6C63FF]"
+        >
+         Logout
+        </a>
+       
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+<header class="px-20 py-5">
+  <div class="grid grid-cols-2">
+    <div class="flex space-x-3 items-center">
+      <div class="bg-[#6C63FF] p-5 rounded-lg"></div>
+      <span class="text-2xl font-semibold uppercase">Nigromotics</span>
+    </div>
+    <div class="flex space-x-3 justify-end items-center">
+      <div class="flex">
+        <div class="object-center">
+          <img src="../assets/Flag.png" class="def-country-img rounded-full h-7 w-7" alt="def_cy_img" />
+        </div>
+      </div>
+      <a class="rounded-full border-[#6C63FF] border-2 px-3 py-1 text-[#6C63FF]" routerLink="/sign-in">
+        Login
+      </a>
+    </div>
+  </div>
+</header>
+<main class="grid grid-cols-2 p-20">
+  <div class="">
+    <div>
+      <h1 class="text-3xl font-bold text-[#6C63FF]">Welcome to Nigromotics</h1>
+      <p class="text-gray-300">
+        you can view your content in your desired laguage <br />Simply sign up
+        and get started
+      </p>
+    </div>
+    <div class="mt-10">
+      <form [formGroup]="registerForm" (submit)="register()">
+        <div class="inputs grid gap-4 grid-cols-2">
+          <div class="flex-col space-y-4">
+            <!-- Name -->
+            <div class="flex flex-col">
+              <input formControlName="firstname" type="text" id="name"
+                class="p-3 border-[#6b63ff5b] border-2 rounded-lg focus:outline-[#6C63FF]" placeholder="First Name" />
+
+
+              <div style="color: red" *ngIf="registerForm.get('firstname')?.errors?.required  && registerForm.get('firstname')?.touched">
+                First Name is required.
+              </div>
+            </div>
+
+            <div class="flex flex-col">
+              <input formControlName="lastname" type="text" id="name"
+                class="p-3 border-[#6b63ff5b] border-2 rounded-lg focus:outline-[#6C63FF]" placeholder="Last Name" />
+
+              <div style="color: red" *ngIf="registerForm.get('lastname')?.errors?.required && registerForm.get('lastname')?.touched">
+                Last Name is required.
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <input formControlName="email" type="text" id="name"
+                class="p-3 border-[#6b63ff5b] border-2 rounded-lg focus:outline-[#6C63FF]" placeholder="Email" />
+
+              <div style="color: red" *ngIf="registerForm.get('email')?.errors?.required  && registerForm.get('email')?.touched">
+                Email is required.
+              </div>
+            </div>
+            
+
+            <div class="flex flex-col">
+              <input formControlName="password" type="text" id="name"
+                class="p-3 border-[#6b63ff5b] border-2 rounded-lg focus:outline-[#6C63FF]" placeholder="Password" />
+
+              <div *ngIf="registerForm.get('password')?.errors?.required && registerForm.get('password')?.touched">
+                <span style="color: red;">Password is required.</span>
+              </div>
+            </div>
+            <div>
+              <select formControlName="language">
+                <option disabled>Select Country</option>
+                <option>Choose Country</option>
+                <option *ngFor="let language of languages">{{language}}</option>
+              </select>
+            </div>
+            
+            <input  [ngClass]="{'opacity-value': registerForm.valid===false}"       value="Register"  [disabled]="!registerForm.valid" type="submit" class="btn-submit btn btn0"/>
+      
+
+            <!-- Mail -->
+
+            <!-- Language -->
+
+          </div>
+
+          <!-- Second Registrant -->
+
+        </div>
+      </form>
+
+      <div class="flex flex-col">
+        <small>Already have an account?
+          <a href="#" routerLink="/sign-in" class="text-[#6C63FF] underline">Sign In</a></small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Container -->
+  <div><img src="../assets/Group 391.png" alt="" /></div>
+</main>
